@@ -1,27 +1,49 @@
-# IbbiChallenge
+# Projeto
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
+Este é um projeto construído com Angular 18, PrimeNG 17.18.
 
-## Development server
+## Pré-requisitos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Certifique-se de ter o Docker e o Docker Compose instalados em sua máquina.
 
-## Code scaffolding
+- Docker: [Instalação do Docker](https://docs.docker.com/get-docker/)
+- Docker Compose: [Instalação do Docker Compose](https://docs.docker.com/compose/install/)
+- Ferramenta de versionamento: [Instalação do Git](https://git-scm.com/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### OBS:
 
-## Build
+Além dos requisitos acima, você precisará da **API** para este aplicativo rodando em sua estação. Você poderá encontrar isto facilmente aqui: [ibbi-challeng-api](https://github.com/mactavishkkk/ibbi-challenge-api).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Como executar
 
-## Running unit tests
+1. Clone o repositório:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+git clone git@github.com:mactavishkkk/ibbi-challenge.git
+```
 
-## Running end-to-end tests
+2. Navegue até o diretório dos arquivos de construção:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+cd ibbi-challenge
+```
 
-## Further help
+3. Construa as imagens para os ambientes com docker, no terminal use:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+docker compose build
+```
+
+4. Agora basta subir elas com:
+
+```bash
+docker compose up -d
+```
+
+5. Pronto, agora você já poderá acessar a rota de boas vindas em seu navegador:
+
+```bash
+https://localhost:4201/
+```
+
+---

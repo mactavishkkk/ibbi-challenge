@@ -11,9 +11,13 @@ import { RouterModule } from '@angular/router';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  userLogged = '';
+
   constructor(public authService: AuthService) { }
-  
-  userLogged = this.authService.userLogeddIn();
+
+  ngOnInit(): void {
+    this.userLogged = this.authService.userLogeddIn();
+  }
 
   logout() {
     this.authService.logout();

@@ -1,6 +1,6 @@
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 1rem;
     margin-bottom: 1rem;
@@ -18,6 +18,8 @@
     list-style: none;
     display: flex;
     gap: 1rem;
+    position: relative;
+    top: 8px;
 }
 
 .nav-item a {
@@ -33,6 +35,21 @@
 }
 
 .nav-item a.active {
-    background-color: #007bff;
-    color: #fff;
+    color: #7c7a7a;
+}
+
+.logout-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+    top: -6.5px;
+
+    &:hover {
+        background-color: #c82333;
+    }
 }

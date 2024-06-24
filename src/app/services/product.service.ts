@@ -28,12 +28,20 @@ export class ProductService {
     return this.http.get(`${this.apiUrl}/products/`, { headers: this.getHeaders(), params: params });
   }
 
+  getProductById(id: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/products/${id}`, { headers: this.getHeaders() });
+  }
+
   getDollarRate(): Observable<any> {
     return this.http.get(this.apiDolarRateUrl);
   }
 
   createProduct(formData: FormData): Observable<any> {
     return this.http.post(`${this.apiUrl}/products/`, formData, { headers: this.getHeaders() });
+  }
+
+  updateProduct(id: number, productData: FormData): Observable<any> {
+    return this.http.put(`${this.apiUrl}/products/${id}`, productData, { headers: this.getHeaders() });
   }
 
   deleteProduct(id: number): Observable<any> {

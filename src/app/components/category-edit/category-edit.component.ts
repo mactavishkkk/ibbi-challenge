@@ -22,6 +22,7 @@ export class CategoryEditComponent {
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
+
     this.categoryService.getCategoryById(id).subscribe(data => {
       this.category = data;
     });
@@ -29,6 +30,7 @@ export class CategoryEditComponent {
 
   saveCategory(): void {
     const id = this.route.snapshot.params['id'];
+    
     this.categoryService.updateCategory(id, this.category).subscribe(() => {
       this.router.navigate(['/categories']);
     });

@@ -1,1 +1,59 @@
-<p>product-edit works!</p>
+<div class="product-form-container">
+    <h2>Editar Produto</h2>
+
+    <form (ngSubmit)="saveProduct()">
+        <div class="form-group">
+            <label for="name">Nome</label>
+            <input id="name" [(ngModel)]="product.name" name="name" required pInputText class="form-control"
+                placeholder="Digite o nome do produto" />
+        </div>
+
+        <div class="form-group">
+            <label for="description">Descrição</label>
+            <textarea id="description" [(ngModel)]="product.description" name="description" pInputTextarea
+                class="form-control" placeholder="Digite a descrição do produto"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="value">Valor (R$)</label>
+            <input id="value" type="number" [(ngModel)]="product.value" name="value" required pInputText
+                class="form-control" />
+        </div>
+
+        <div class="form-group" hidden>
+            <label for="dolarValue">Valor em Dólar (US$)</label>
+            <input id="dolarValue" type="number" [(ngModel)]="product.dolarValue" name="dolarValue" required pInputText
+                class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="quantity">Quantidade</label>
+            <input id="quantity" type="number" [(ngModel)]="product.quantity" name="quantity" required pInputText
+                class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="image">Imagem</label>
+            <input id="image" type="file" (change)="onFileSelected($event)" name="image" pInputText
+                class="form-control" />
+        </div>
+
+        <div class="form-group" hidden>
+            <label for="status">Status</label>
+            <input id="status" [(ngModel)]="product.status" name="status" pInputText class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="category">Categoria</label>
+            <select id="category" [(ngModel)]="product.category_id" name="category_id" required class="form-control">
+                <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+            </select>
+        </div>
+
+        <div class="form-actions">
+            <button type="button" pButton label="Voltar" icon="pi pi-arrow-left" class="p-button-secondary"
+                (click)="goBack()"></button>
+            <button type="submit" pButton label="Salvar" icon="pi pi-check" class="p-button-success"></button>
+        </div>
+    </form>
+</div>

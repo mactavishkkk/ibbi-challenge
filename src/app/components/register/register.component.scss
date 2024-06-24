@@ -1,0 +1,50 @@
+.register-container, .login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .register-container h2, .login-container h2 {
+    text-align: center;
+  }
+  
+  .register-container form, .login-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .register-container label, .login-container label {
+    margin-bottom: 8px;
+  }
+  
+  .register-container input, .login-container input {
+    margin-bottom: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .register-container button, .login-container button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .register-container button:hover, .login-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .register-container p, .login-container p {
+    text-align: center;
+  }
+  
+  .register-container p a, .login-container p a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  

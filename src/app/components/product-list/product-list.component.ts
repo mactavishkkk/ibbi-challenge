@@ -93,8 +93,8 @@ export class ProductListComponent {
     this.router.navigate(['/products/create']);
   }
 
-  editProduct(product: any): void {
-    // this.router.navigate(['/products/edit', product.id]);
+  editProduct(id: any): void {
+    this.router.navigate(['/products/edit', id]);
   }
 
   deleteProduct(id: number): void {

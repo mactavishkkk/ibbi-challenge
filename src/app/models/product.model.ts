@@ -21,3 +21,15 @@ export interface ProductCreateDTO {
     image: string;
     category_id: number;
 }
+
+export interface ProductUpdateDTO {
+    id: number;
+    name: string;
+    description: string;
+    value: number;
+    dolarValue: number;
+    quantity: number;
+    status: string;
+    image: string;
+    category_id: number;
+}

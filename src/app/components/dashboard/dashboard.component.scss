@@ -1,0 +1,14 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaço entre os componentes */
+}
+
+.sales-charts {
+    display: flex;
+    gap: 10px
+}
+
+.sales-by-category, .sales-by-product {
+    width: 50%;
+}

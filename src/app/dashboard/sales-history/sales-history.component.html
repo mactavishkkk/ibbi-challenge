@@ -1,0 +1,25 @@
+<div class="sales-history-card">
+    <h3 class="card-title">Histórico de Vendas</h3>
+    <table class="sales-table">
+        <thead>
+            <tr>
+                <th>Data da Venda</th>
+                <th>Horário</th>
+                <th>Descrição</th>
+                <th>Cliente</th>
+                <th>Vendedor</th>
+                <th>Observação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let sale of sales">
+                <td>{{ sale.date }}</td>
+                <td>{{ sale.time }}</td>
+                <td>{{ sale.description }}</td>
+                <td>{{ sale.customer }}</td>
+                <td>{{ sale.seller }}</td>
+                <td>{{ sale.notes }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

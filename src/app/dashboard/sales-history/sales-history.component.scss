@@ -1,0 +1,44 @@
+.sales-history-card {
+    background-color: #343a40;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+.sales-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.sales-table th,
+.sales-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.sales-table th {
+    background-color: #343a40;
+    font-weight: bold;
+    color: #C57409;
+}
+
+.sales-table tr:nth-child(even) {
+    background-color: #343a40;
+}
+
+.sales-table tr:hover {
+    background-color: #343a40;
+}
+
+.sales-table td {
+    color: #fff;
+}

@@ -1,1 +1,46 @@
-<p>product-list works!</p>
+<div class="search-form">
+    <div class="header">
+        <button pButton type="button" icon="pi pi-plus" label="" (click)="createProduct()"></button>
+    </div>
+
+    <label for="category">Categoria:</label>
+    <select id="category" [(ngModel)]="searchCategory" (change)="onSearch()">
+        <option [ngValue]="null">Todas</option>
+        <option *ngFor="let category of categories" [ngValue]="category.id">{{ category.name }}</option>
+    </select>
+
+    <label for="description">Descrição:</label>
+    <input type="text" id="description" [(ngModel)]="searchDescription" (input)="onSearch()">
+
+    <button type="button" (click)="onSearch()">Buscar</button>
+</div>
+
+<div class="product-cards">
+    <div *ngFor="let product of products" class="product-card">
+        <div class="product-card-header">
+            <h3>{{ product.name }} (qtd. {{ product.quantity }})</h3>
+        </div>
+
+        <div class="product-card-body">
+            <img [src]="getImageUrl(product.image)" alt="{{ product.name }}" class="product-image">
+            <p>{{ product.description }}</p>
+            <p class="product-value"><strong>{{ product.value | currency:'BRL':'symbol':'1.2-2' }}</strong></p>
+            <p class="product-dolar-value">{{ product.dolarValue | currency:'USD':'symbol':'1.2-2' }}</p>
+            <p class="product-status"><strong>Status:</strong></p>
+            <p class="product-status" [ngClass]="getStatusClass(product.status)">{{ product.status }}</p>
+        </div>
+
+        <div class="product-card-actions">
+            <button pButton type="button" class="edit-button" icon="pi pi-pencil"
+                (click)="editProduct(product.id)"></button>
+            <button pButton type="button" class="delete-button" icon="pi pi-trash"
+                (click)="deleteProduct(product.id)"></button>
+        </div>
+    </div>
+</div>
+
+<div class="pagination">
+    <button [disabled]="skip === 0" (click)="onPrevPage()">Anterior</button>
+    <span>{{ skip + 1 }} - {{ skip + products.length }}</span>
+    <button [disabled]="products.length < limit" (click)="onNextPage()">Próxima</button>
+</div>

@@ -5,6 +5,7 @@ import { CategoryListComponent } from './components/category-list/category-list.
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { CategoryCreateComponent } from './components/category-create/category-create.component';
 import { CategoryEditComponent } from './components/category-edit/category-edit.component';
+import { ProductCreateComponent } from './components/product-create/product-create.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -15,4 +16,5 @@ export const routes: Routes = [
     { path: 'categories/edit/:id', component: CategoryEditComponent },
 
     { path: 'products', component: ProductListComponent, canActivate: [AuthGuard] },
+    { path: 'products/create', component: ProductCreateComponent },
 ];
